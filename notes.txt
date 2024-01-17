@@ -17,5 +17,11 @@ DATABASE_URL y valor, quitar del archivo .env
 
 
 SWAGGER
-he tenido que bajar en package la versión archivo
-"swagger-ui-express": "^4.6.3"
+he tenido que añadir en main.tablasconst document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document,{
+    customCssUrl:
+      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.0.0/swagger-ui.min.css',
+    customJs: [
+      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.0.0/swagger-ui-bundle.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.0.0/swagger-ui-standalone-preset.js',
+    ],
