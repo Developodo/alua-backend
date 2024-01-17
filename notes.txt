@@ -13,4 +13,4 @@ Build Command: npx prisma generate && nest build
 
 
 En variables de entorno del proyecto
-DATABASE_URL
+DATABASE_URL y valor, quitar del archivo .env
