@@ -13,14 +13,25 @@ export class ChallengesService {
 
   findAll() {
     //return this.prisma.article.findMany({ where: { published: true } });
-    return this.prisma.challenge.findMany();
+    return this.prisma.challenge.findMany({
+      orderBy: [
+        {
+          start_date_local: 'desc',
+        },
+      ],
+    });
   }
 
   findAllByClub(id:number){
     return this.prisma.challenge.findMany({ where: { club: {
       path: ['id'],
       equals: id,
-    }, } });
+    }, },
+    orderBy: [
+      {
+        start_date_local: 'desc',
+      },
+    ] });
   }
   async findAllByClubs(ids:string){
     const _ids=ids.split(",")
