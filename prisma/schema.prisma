@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Challenge{
+  id          Int     @id @default(autoincrement())
+  name                      String   @unique
+  description               String
+  image                     String
+  total_elevation_gain      Int
+  club                      Json
+  type                      String
+  start_date_local          DateTime @default(now())
+  end_date_local            DateTime
+  stages                    Json
+  athletes                  Json
+}
