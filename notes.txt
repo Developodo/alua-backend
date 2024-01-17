@@ -14,3 +14,8 @@ Build Command: npx prisma generate && nest build
 
 En variables de entorno del proyecto
 DATABASE_URL y valor, quitar del archivo .env
+
+
+SWAGGER
+he tenido que bajar en package la versión archivo
+"swagger-ui-express": "^4.6.3"
