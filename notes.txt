@@ -10,3 +10,7 @@ Vercel
 
 En la página del proyecto en vercel -> settings -> general
 Build Command: npx prisma generate && nest build
+
+
+En variables de entorno del proyecto
+DATABASE_URL
