@@ -16,7 +16,7 @@ export class ChallengesService {
     return this.prisma.challenge.findMany({
       orderBy: [
         {
-          start_date_local: 'desc',
+          end_date_local: 'desc',
         },
       ],
     });
@@ -29,7 +29,7 @@ export class ChallengesService {
     }, },
     orderBy: [
       {
-        start_date_local: 'desc',
+        end_date_local: 'desc',
       },
     ] });
   }
