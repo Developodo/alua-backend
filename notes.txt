@@ -1,0 +1,12 @@
+Creación de tablas
+prisma generate && nest build
+
+
+Vercel
+1- creación verce.json
+2- package.json-->
+ "build": "prisma generate && nest build",
+
+
+En la página del proyecto en vercel -> settings -> general
+Build Command: npx prisma generate && nest build
