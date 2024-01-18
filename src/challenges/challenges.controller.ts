@@ -7,6 +7,7 @@ import { UpdateChallengeDto } from './dto/update-challenge.dto';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { ChallengeEntity } from './entities/challenge.entity';
 import { UpdateAthleteDto } from './dto/update-athlete.dto';
+import { PageNotFoundComponent } from '../../../AngularTraining/src/app/pages/page404/page-not-found.component';
 
 
 
@@ -37,6 +38,13 @@ export class ChallengesController {
   @ApiOkResponse({ type: ChallengeEntity, isArray: true  })
   findByClub(@Param('id') id: string) {
     return this.challengesService.findAllByClub(+id);
+  }
+
+
+  @Get('/club/:id/page/:page')
+  @ApiOkResponse({ type: ChallengeEntity, isArray: true  })
+  findByClubPerPage(@Param('id') id: string,@Param('page') page: string) {
+    return this.challengesService.findAllByClub(+id,+page);
   }
 
 
