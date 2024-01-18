@@ -23,7 +23,7 @@ export class ChallengesService {
   }
 
   findAllByClub(id:number,page:number=1){
-    const challengesPerPage=1;  //up to 5
+    const challengesPerPage=3;  //up to 5
     return this.prisma.challenge.findMany({ 
       skip:challengesPerPage*(page-1),
       take:challengesPerPage,
