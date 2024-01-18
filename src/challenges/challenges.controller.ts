@@ -7,7 +7,6 @@ import { UpdateChallengeDto } from './dto/update-challenge.dto';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { ChallengeEntity } from './entities/challenge.entity';
 import { UpdateAthleteDto } from './dto/update-athlete.dto';
-import { PageNotFoundComponent } from '../../../AngularTraining/src/app/pages/page404/page-not-found.component';
 
 
 

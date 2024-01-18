@@ -43,7 +43,7 @@ export class ChallengesService {
   async findAllByClubs(ids:string,page:string='1'){
     const _ids=ids.split(",")
     let result=[];
-    for(let i=0;i<ids.length;i++){
+    for(let i=0;i<_ids.length;i++){
       result=result.concat(await this.findAllByClub(+_ids[i],+page));
     }
     
