@@ -44,13 +44,9 @@ export class ChallengesService {
     const _ids=ids.split(",")
     let result=[];
     for(let i=0;i<_ids.length;i++){
-      console.log("BUSCO PARA "+_ids[i])
       const items=await this.findAllByClub(+_ids[i],+page);
-      console.log(items);
       result=result.concat(...items);
     }
-    console.log("TOTAL")
-    console.log(result)
     return result;
   }
 
