@@ -22,16 +22,23 @@ export class ChallengesService {
     });
   }
 
-  findAllByClub(id:number){
-    return this.prisma.challenge.findMany({ where: { club: {
+  findAllByClub(id:number,page:number=1){
+    const challengesPerPage=1;  //up to 5
+    return this.prisma.challenge.findMany({ 
+      skip:challengesPerPage*(page-1),
+      take:challengesPerPage,
+      where: { club: {
       path: ['id'],
       equals: id,
     }, },
     orderBy: [
       {
         end_date_local: 'desc',
-      },
+      }
     ] });
+    /**
+     * 
+     */
   }
   async findAllByClubs(ids:string){
     const _ids=ids.split(",")
