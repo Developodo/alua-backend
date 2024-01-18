@@ -39,10 +39,17 @@ export class ChallengesController {
     return this.challengesService.findAllByClub(+id);
   }
 
+
   @Get('/clubs/:id')
   @ApiOkResponse({ type: ChallengeEntity, isArray: true  })
-  findByClubs(@Param('id') id: string) {
+  findByClubsFirstPage(@Param('id') id: string) {
     return this.challengesService.findAllByClubs(id);
+  }
+
+  @Get('/clubs/:id/page/:page')
+  @ApiOkResponse({ type: ChallengeEntity, isArray: true  })
+  findByClubs(@Param('id') id: string,@Param('page') page: string) {
+    return this.challengesService.findAllByClubs(id,page);
   }
 
   @Patch(':id')
