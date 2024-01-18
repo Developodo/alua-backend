@@ -44,7 +44,7 @@ export class ChallengesService {
     const _ids=ids.split(",")
     let result=[];
     for(let i=0;i<ids.length;i++){
-      result=result.concat(await this.findAllByClub(+_ids[i]),+page);
+      result=result.concat(await this.findAllByClub(+_ids[i],+page));
     }
     
     return result;
